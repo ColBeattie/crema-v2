@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="supported-color-schemes" content="light dark" />
+    <title>A new Multi-Factor Authentication (MFA) method has been added</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        supported-color-schemes: light dark;
+      }
+      html,
+      body {
+        margin: 0 !important;
+        padding: 0 !important;
+        height: 100% !important;
+        width: 100% !important;
+      }
+      * {
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+      }
+      table,
+      td {
+        mso-table-lspace: 0pt !important;
+        mso-table-rspace: 0pt !important;
+      }
+      table {
+        border-spacing: 0 !important;
+        border-collapse: collapse !important;
+        table-layout: fixed !important;
+        margin: 0 auto !important;
+      }
+      img {
+        -ms-interpolation-mode: bicubic;
+        border: 0;
+        outline: none;
+        text-decoration: none;
+        display: block;
+      }
+      a {
+        text-decoration: none;
+      }
+
+      /* Dark mode.
+         The two <meta color-scheme> tags above opt this email in to the
+         client's dark rendering, so EVERY colour set inline below needs a
+         counterpart here. A partial set is worse than none: the client
+         darkens the card but leaves the heading dark, and you ship
+         dark-on-dark text. Keep these in sync when editing inline colours.
+         The [data-ogsc] copies cover Outlook.com, which rewrites inline
+         styles instead of honouring prefers-color-scheme. */
+      @media (prefers-color-scheme: dark) {
+        .em-bg {
+          background: #0b1020 !important;
+        }
+        .em-card {
+          background: #161c2c !important;
+          box-shadow: none !important;
+        }
+        .em-heading,
+        .em-strong {
+          color: #f9fafb !important;
+        }
+        .em-text {
+          color: #cbd5e1 !important;
+        }
+        .em-muted {
+          color: #94a3b8 !important;
+        }
+        .em-footer {
+          background: #111827 !important;
+          border-top-color: #243047 !important;
+        }
+        .em-code {
+          background: #0b1020 !important;
+          color: #f9fafb !important;
+        }
+        .em-btn {
+          background: #f9fafb !important;
+        }
+        .em-btn a {
+          color: #111827 !important;
+        }
+      }
+      [data-ogsc] .em-bg {
+        background: #0b1020 !important;
+      }
+      [data-ogsc] .em-card {
+        background: #161c2c !important;
+        box-shadow: none !important;
+      }
+      [data-ogsc] .em-heading,
+      [data-ogsc] .em-strong {
+        color: #f9fafb !important;
+      }
+      [data-ogsc] .em-text {
+        color: #cbd5e1 !important;
+      }
+      [data-ogsc] .em-muted {
+        color: #94a3b8 !important;
+      }
+      [data-ogsc] .em-footer {
+        background: #111827 !important;
+        border-top-color: #243047 !important;
+      }
+      [data-ogsc] .em-code {
+        background: #0b1020 !important;
+        color: #f9fafb !important;
+      }
+      [data-ogsc] .em-btn {
+        background: #f9fafb !important;
+      }
+      [data-ogsc] .em-btn a {
+        color: #111827 !important;
+      }
+    </style>
+  </head>
+
+  <body
+    class="em-bg"
+    style="
+      margin: 0;
+      padding: 0;
+      background: #f6f7fb;
+      font-family:
+        -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto,
+        Helvetica, Arial, sans-serif;
+      color: #111827;
+    "
+  >
+    <!-- Preheader (hidden) -->
+    <div
+      style="
+        display: none;
+        font-size: 1px;
+        line-height: 1px;
+        max-height: 0px;
+        max-width: 0px;
+        opacity: 0;
+        overflow: hidden;
+      "
+    >
+      A new Multi-Factor Authentication (MFA) method was added to your account.
+    </div>
+
+    <center class="em-bg" style="width: 100%; background: #f6f7fb">
+      <table
+        role="presentation"
+        width="100%"
+        style="max-width: 640px; margin: 0 auto"
+        cellpadding="0"
+        cellspacing="0"
+        border="0"
+      >
+        <tr>
+          <td style="padding: 32px 20px">
+            <!-- Card -->
+            <table
+              role="presentation"
+              width="100%"
+              cellpadding="0"
+              cellspacing="0"
+              border="0"
+              class="em-card"
+              style="
+                background: #ffffff;
+                border-radius: 16px;
+                overflow: hidden;
+                box-shadow: 0 10px 30px rgba(17, 24, 39, 0.08);
+              "
+            >
+              <tr>
+                <td style="padding: 28px 24px 8px 24px">
+                  <h2
+                    class="em-heading"
+                    style="
+                      margin: 0;
+                      font-size: 22px;
+                      line-height: 1.25;
+                      color: #111827;
+                    "
+                  >
+                    A new Multi-Factor Authentication (MFA) method has been
+                    added
+                  </h2>
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding: 0 24px 24px 24px">
+                  <p
+                    class="em-text"
+                    style="
+                      margin: 12px 0 0 0;
+                      font-size: 15px;
+                      line-height: 1.6;
+                      color: #374151;
+                    "
+                  >
+                    A new Multi-Factor Authentication (MFA) method (<span
+                      class="em-strong"
+                      style="font-weight: 600; color: #111827"
+                      >{{ .FactorType }}</span
+                    >) has been added to your account
+                    <span
+                      class="em-strong"
+                      style="font-weight: 600; color: #111827"
+                      >{{ .Email }}</span
+                    >.
+                  </p>
+                  <p
+                    class="em-text"
+                    style="
+                      margin: 12px 0 0 0;
+                      font-size: 15px;
+                      line-height: 1.6;
+                      color: #374151;
+                    "
+                  >
+                    Multi-Factor Authentication (MFA) adds an extra layer of
+                    security to your account. In addition to your password, it
+                    requires a second step to verify your identity, such as a
+                    code sent to your phone or generated by an authentication
+                    app.
+                  </p>
+                  <p
+                    class="em-text"
+                    style="
+                      margin: 12px 0 0 0;
+                      font-size: 15px;
+                      line-height: 1.6;
+                      color: #374151;
+                    "
+                  >
+                    If you did not make this change, please contact your admin
+                    immediately.
+                  </p>
+                </td>
+              </tr>
+
+              <tr>
+                <td
+                  class="em-footer"
+                  style="
+                    padding: 16px 24px;
+                    background: #f9fafb;
+                    border-top: 1px solid #eef2f7;
+                  "
+                >
+                  <div
+                    class="em-muted"
+                    style="font-size: 12px; line-height: 1.6; color: #6b7280"
+                  >
+                    Security tip: If you didn’t request this change, reset your
+                    password as soon as possible.
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </center>
+  </body>
+</html>

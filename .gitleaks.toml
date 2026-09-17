@@ -1,0 +1,15 @@
+title = "Gitleaks config"
+
+# Use the default rules from gitleaks (API keys, tokens, passwords, etc.)
+# This file only defines allowlists for known false positives.
+
+[allowlist]
+  description = "Global allowlist"
+
+  # Files that are safe to ignore
+  paths = [
+    '''node_modules/.*''',
+    '''\.next/.*''',
+    '''package-lock\.json''',
+    '''\.gitleaks\.toml''',
+  ]

@@ -1,0 +1,42 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(.env)",
+      "Read(.env.*)",
+      "Read(**/.env)",
+      "Read(**/.env.*)",
+      "Edit(.env)",
+      "Edit(.env.*)",
+      "Edit(**/.env)",
+      "Edit(**/.env.*)",
+      "Glob(.env)",
+      "Glob(.env.*)",
+      "Glob(**/.env)",
+      "Glob(**/.env.*)",
+      "Grep(path:.env)",
+      "Grep(path:.env.*)",
+      "Grep(path:**/.env)",
+      "Grep(path:**/.env.*)",
+      "Read(**/secrets/**)",
+      "Edit(**/secrets/**)",
+      "Glob(**/secrets/**)",
+      "Grep(path:**/secrets/**)",
+      "Read(**/*.pem)",
+      "Read(**/*.key)",
+      "Read(**/*.crt)",
+      "Read(**/*.p12)",
+      "Read(**/*.pfx)",
+      "Read(**/id_rsa)",
+      "Read(**/id_ed25519)",
+      "Read(**/service-account.json)",
+      "Read(**/*serviceAccount*.json)",
+      "Read(**/*credentials*.json)",
+      "Read(**/.npmrc)",
+      "Read(**/.yarnrc)",
+      "Read(**/.pnpmfile.cjs)",
+      "Read(**/.ssh/**)",
+      "Read(**/.vercel/**)",
+      "Read(**/.supabase/**)"
+    ]
+  }
+}

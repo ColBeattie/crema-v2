@@ -1,0 +1,25 @@
+{
+  // Fail CI on HIGH or CRITICAL advisories.
+  // MODERATE/LOW advisories are reported but do not fail the build.
+  "high": true,
+  "report-type": "important",
+
+  // Per-advisory allowlist. Each entry MUST be accompanied by a
+  // comment block above containing:
+  //   Reason: why this advisory is not exploitable in this codebase
+  //   Expiry: YYYY-MM-DD (typically 3 months from when it was added)
+  //
+  // When the expiry passes, remove the ID and re-run audit. If
+  // upstream still hasn't shipped a fix and the rationale still
+  // holds, add it back with a new expiry — do not extend the old
+  // one without re-reviewing. PR reviewers must reject entries
+  // without both a Reason and an Expiry.
+  //
+  // Example:
+  //
+  //   GHSA-xxxx-xxxx-xxxx — short library/CVE description
+  //     Reason: ...
+  //     Expiry: YYYY-MM-DD
+  //
+  "allowlist": [],
+}
