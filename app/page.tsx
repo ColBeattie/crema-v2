@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
-import { TrendingUp } from "lucide-react";
+import { useState, useEffect } from "react";
+import { TrendingUp, Calculator as CalculatorIcon } from "lucide-react";
 import {
   Area,
   AreaChart,
@@ -28,12 +28,14 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import {
   ChartConfig,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
+import { Calculator } from "./components/Calculator";
 
 // --- Data ---
 
@@ -91,13 +93,27 @@ const radialConfig = {
 } satisfies ChartConfig;
 
 export default function Home() {
+  const [calculatorOpen, setCalculatorOpen] = useState(false);
+
   useEffect(() => {
     document.title = "Dashboard Example";
   }, []);
 
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold mb-6">Dashboard Example</h1>
+      <div className="flex justify-between items-center mb-6">
+        <h1 className="text-2xl font-bold">Dashboard Example</h1>
+        <Button
+          onClick={() => setCalculatorOpen(true)}
+          className="flex gap-2 bg-blue-600 hover:bg-blue-700"
+        >
+          <CalculatorIcon className="w-4 h-4" />
+          Calculator
+        </Button>
+      </div>
+
+      <Calculator open={calculatorOpen} onOpenChange={setCalculatorOpen} />
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {/* Area Chart */}
         <Card>
